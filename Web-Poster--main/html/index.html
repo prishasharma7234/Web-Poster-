@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GradEx 110 Poster</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Intro toggle
+        const intro = document.querySelector(".intro-text");
+        const introToggle = document.querySelector(".intro-toggle");
+        introToggle.addEventListener("click", () => {
+          intro.classList.toggle("showing");
+          intro.innerText = intro.classList.contains("showing")
+            ? "Tap the artifacts. Let them reveal what lies beneath."
+            : "Tap to reveal intro";
+        });
+
+        // Section toggle
+        document.querySelectorAll(".gradex-button[data-section]").forEach((btn, index) => {
+          btn.addEventListener("click", () => {
+            document.querySelectorAll(".gradex-content").forEach((el, i) => {
+              el.style.display = i === index ? (el.style.display === "block" ? "none" : "block") : "none";
+            });
+          });
+        });
+
+        // Schedule toggle
+        document.querySelectorAll(".schedule-button").forEach((btn, index) => {
+          btn.addEventListener("click", () => {
+            document.querySelectorAll(".schedule-detail").forEach((el, i) => {
+              el.style.display = i === index ? (el.style.display === "block" ? "none" : "block") : "none";
+            });
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <main class="wrapper">
+      <div class="title-row">
+        <h1 class="gradex-title">UNFOLDING</h1>
+        <h1 class="gradex-title">FUTURES</h1>
+      </div>
+
+      <p class="gradex-date">May 7 – 11, 2025</p>
+      <h2 class="gradex-subtitle">GRAD EX 110 2025</h2>
+
+      <p class="gradex-date intro-toggle"><span class="intro-text">Tap to reveal intro</span></p>
+
+      <div class="card-grid">
+        <div class="gradex-card">
+          <button class="gradex-button" data-section style="color:#d6e600;border-color:#d6e600;">Step into the Portal</button>
+          <div class="gradex-content">GRADEX 110 is OCAD University's signature graduate exhibition...</div>
+        </div>
+        <div class="gradex-card">
+          <button class="gradex-button" data-section style="color:#f06292;border-color:#f06292;">Trade Dreams for Currency</button>
+          <div class="gradex-content">Graduating students can apply to the GradEx 110 Marketplace...</div>
+        </div>
+        <div class="gradex-card">
+          <button class="gradex-button" data-section style="color:#4dd0e1;border-color:#4dd0e1;">Decode the Safety Rituals</button>
+          <div class="gradex-content">All exhibiting students are required to complete Health & Safety Days...</div>
+        </div>
+        <div class="gradex-card">
+          <button class="gradex-button" data-section style="color:#81c784;border-color:#81c784;">Whispers from the Forum</button>
+          <div class="gradex-content">The GradEx Student Information Forum is a centralized hub...</div>
+        </div>
+      </div>
+
+      <div class="schedule-section">
+        <h3 class="gradex-schedule-title">Exhibition Schedule</h3>
+        <div class="card-grid">
+          <div class="gradex-card">
+            <button class="gradex-button schedule-button">Wednesday, May 7</button>
+            <div class="gradex-content schedule-detail">Opening Night Celebration in Butterfield Park/The Auditorium (Room 190)...</div>
+          </div>
+          <div class="gradex-card">
+            <button class="gradex-button schedule-button">Thursday, May 8</button>
+            <div class="gradex-content schedule-detail">Exhibition open to the public 9:30 a.m. to 8 p.m.</div>
+          </div>
+          <div class="gradex-card">
+            <button class="gradex-button schedule-button">Friday, May 9</button>
+            <div class="gradex-content schedule-detail">Exhibition open to the public 9:30 a.m. to 8 p.m.</div>
+          </div>
+          <div class="gradex-card">
+            <button class="gradex-button schedule-button">Saturday, May 10</button>
+            <div class="gradex-content schedule-detail">Exhibition open to the public 10 a.m. to 5 p.m.</div>
+          </div>
+          <div class="gradex-card">
+            <button class="gradex-button schedule-button">Sunday, May 11</button>
+            <div class="gradex-content schedule-detail">Exhibition open to the public 10 a.m. to 5 p.m.</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
